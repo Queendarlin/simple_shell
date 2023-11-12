@@ -1,7 +1,8 @@
 #include "shell.h"
 
 /**
- * viqu_gets_index_node - A function that gets the index of a node in a linked list.
+ * viqu_gets_index_node - A function that gets the index of a node in
+ * a linked list.
  * @viqu_head: The main pointer to the list head.
  * @viqu_node: The singular pointer to the node.
  *
