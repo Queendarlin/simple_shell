@@ -30,8 +30,7 @@ char *viqu_int_to_string(long int viqu_num, int viqu_base, int viqu_flags)
 	do {
 		*--viqu_ptr = viqu_array[viqu_n % viqu_base];
 		viqu_n /= viqu_base;
-	}
-	while (viqu_n != 0);
+	} while (viqu_n != 0);
 
 	if (viqu_sign)
 		*--viqu_ptr = viqu_sign;
