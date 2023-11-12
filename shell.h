@@ -19,7 +19,7 @@
 #define VIQU_FLUSH_BUFFER -1
 
 /* for command chaining */
-#define VIQU_INSTRUCT_NORMAL        0
+#define VIQU_INSTRUCT_NORMAL      0
 #define VIQU_INSTRUCT_OR          1
 #define VIQU_INSTRUCT_AND         2
 #define VIQU_INSTRUCT_CHAIN       3
@@ -203,13 +203,13 @@ char *viqu_int_to_string(long int viqu_num,
 void viqu_comment_sign_removal(char *viqu_buf);
 
 /* toem_builtin.c */
-int viqu_exit_control(viqu_info_t *viqu_info);
+int viqu_exit_control(info_t *viqu_info);
 int viqu_change_directory(info_t *g);
-int viqu_help_function(viqu_info_t *viqu_info);
+int viqu_help_function(info_t *viqu_info);
 
 /* toem_builtin1.c */
-int viqu_display_command_hist(viqu_info_t *viqu_info);
-int viqu_custom_alias(viqu_info_t *viqu_info);
+int viqu_display_command_hist(info_t *viqu_info);
+int viqu_custom_alias(info_t *viqu_info);
 
 /*toemgetsline.c */
 ssize_t viqu_buffer_read(info_t *viqu_info, char *viqu_buf,

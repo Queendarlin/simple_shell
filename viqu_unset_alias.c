@@ -1,3 +1,5 @@
+#include "shell.h"
+
 /**
  * viqu_unset_alias - Function to remove an alias specified by a string.
  * @viqu_info: Structure containing parameters.
@@ -5,7 +7,8 @@
  *
  * Return: 0 when successful or (1) on error.
  */
-int viqu_unset_alias(viqu_info_t *viqu_info, char *viqu_str)
+
+int viqu_unset_alias(info_t *viqu_info, char *viqu_str)
 {
 	char *viqu_p, viqu_c;
 	int viqu_ret;
@@ -18,7 +21,7 @@ int viqu_unset_alias(viqu_info_t *viqu_info, char *viqu_str)
 	*viqu_p = 0;
 
 	viqu_ret = viqu_del_node_idx(&(viqu_info->viqu_alias),
-			gets_index_node(viqu_info->viqu_alias,
+			viqu_gets_index_node(viqu_info->viqu_alias,
 				viqu_prefix_node(viqu_info->viqu_alias, viqu_str, -1)));
 
 	*viqu_p = viqu_c;
