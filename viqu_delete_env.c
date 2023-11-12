@@ -1,4 +1,4 @@
-#include “shell.h”
+#include "shell.h"
 
 /**
  * viqu_delete_env - Function to remove an environment variable
@@ -6,6 +6,7 @@
  * @viqu_var: The string property of an environment variable to be removed.
  * Return: 1 when successful, and 0 when it fails.
  */
+
 int viqu_delete_env(info_t *viqu_info, char *viqu_var)
 {
 	list_t *viqu_node = viqu_info->viqu_env;

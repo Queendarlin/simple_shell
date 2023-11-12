@@ -19,7 +19,7 @@ int viqu_del_node_idx(list_t **viqu_head, unsigned int viqu_index)
 	if (!viqu_index)
 	{
 		viqu_node = *viqu_head;
-		*viqu_head = (*viqu_head)->next;
+		*viqu_head = (*viqu_head)->viqu_next;
 		free(viqu_node->viqu_str);
 		free(viqu_node);
 		return (1);

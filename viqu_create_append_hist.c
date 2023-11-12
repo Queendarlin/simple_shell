@@ -1,4 +1,4 @@
-#include “shell.h”
+#include "shell.h"
 
 /**
  * viqu_create_append_hist - Function to create or append a/an existing file.
@@ -6,6 +6,7 @@
  *
  * Return: 1 when successful, -1 when it fails.
  */
+
 int viqu_create_append_hist(info_t *viqu_info)
 {
 	ssize_t viqu_fd;

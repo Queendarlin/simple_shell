@@ -1,4 +1,4 @@
-#include “shell.h”
+#include "shell.h"
 
 /**
  * viqu_help_function - Function that oversees the initial help functionality
@@ -7,7 +7,7 @@
  * Return: 0 on success, indicating basic functionality for the help system.
  */
 
-int viqu_help_function(viqu_info_t *viqu_info)
+int viqu_help_function(info_t *viqu_info)
 {
 	char **viqu_arg_array;
 

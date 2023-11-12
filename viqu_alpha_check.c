@@ -1,4 +1,4 @@
-#include “shell.h”
+#include "shell.h"
 
 /**
  * viqu_alpha_check - Function to check if a character is an alphabetic letter.
@@ -7,6 +7,7 @@
  *
  * Return: 1 if @viqu_letter is an alphabetic letter, 0 otherwise.
  */
+
 int viqu_alpha_check(int viqu_letter)
 {
 	if ((viqu_letter >= 'a' && viqu_letter <= 'z') ||

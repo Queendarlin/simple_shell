@@ -1,4 +1,4 @@
-#include “shell.h”
+#include "shell.h"
 
 /**
  * viqu_set_alias - Function to set an alias to a string.
@@ -7,7 +7,8 @@
  *
  * Return: Returns 0 when successful, or 1 on error.
  */
-int viqu_set_alias(viqu_info_t *viqu_info, char *viqu_str)
+
+int viqu_set_alias(info_t *viqu_info, char *viqu_str)
 {
 	char *viqu_p;
 

@@ -1,4 +1,4 @@
-#include “shell.h”
+#include "shell.h"
 
 /**
  * viqu_puts - Function to print a string to the standard output.
@@ -6,9 +6,10 @@
  *
  * Return: void
  */
+
 void viqu_puts(char *viqu_str)
 {
-	Int viqu_index;
+	int viqu_index;
 
 	if (!viqu_str)
 		return;

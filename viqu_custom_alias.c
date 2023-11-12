@@ -1,4 +1,4 @@
-#include “shell.h”
+#include "shell.h"
 
 /**
  * viqu_custom_alias - Function to emulate the behavior of the alias command.
@@ -6,7 +6,8 @@
  *
  * Return: Return 0 when successful.
  */
-int viqu_custom_alias(viqu_info_t *viqu_info)
+
+int viqu_custom_alias(info_t *viqu_info)
 {
 	int viqu_index = 0;
 	char *viqu_ptr = NULL;

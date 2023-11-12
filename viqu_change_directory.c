@@ -1,10 +1,11 @@
-#include “shell.h”
+#include "shell.h"
 
 /**
  * viqu_change_directory - Function for changing the current directory
  * @g: A structured set of potential arguments
  * Return: Returns 0 when successful.
  */
+
 int viqu_change_directory(info_t *g)
 {
 	char *viqu_s, *viqu_d, viqu_buffer[1024];
