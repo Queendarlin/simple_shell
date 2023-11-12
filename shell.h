@@ -204,7 +204,7 @@ void viqu_comment_sign_removal(char *viqu_buf);
 
 /* toem_builtin.c */
 int viqu_exit_control(viqu_info_t *viqu_info);
-int viqu_change_directory(info_t *viqu_info);
+int viqu_change_directory(info_t *g);
 int viqu_help_function(viqu_info_t *viqu_info);
 
 /* toem_builtin1.c */
