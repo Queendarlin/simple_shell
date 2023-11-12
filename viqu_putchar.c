@@ -1,7 +1,7 @@
 #include “shell.h”
 
 /**
- * viqu_putchar - Writes the character viqu_c to stdout
+ * viqu_putchar - Function to Write the character viqu_c to stdout
  * @viqu_c: The character to print
  *
  * Return: On success 1.
