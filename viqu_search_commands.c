@@ -35,8 +35,9 @@ void viqu_search_command(info_t *viqu_info)
 	}
 	else
 	{
-		if ((viqu_interactive_mode(viqu_info) || viqu_obtain_environ(viqu_info,
-						"PATH=") || viqu_info->viqu_argv[0][0] == '/') &&
+		if ((viqu_interactive_mode(viqu_info) ||
+					viqu_obtain_environ(viqu_info,	"PATH=")
+					|| viqu_info->viqu_argv[0][0] == '/') &&
 				viqu_determine_exe_cmd(viqu_info, viqu_info->viqu_argv[0]))
 		{
 			viqu_exec_fork_command(viqu_info);

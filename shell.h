@@ -97,7 +97,7 @@ typedef struct viqu_pass_info
 
 } info_t;
 
-#define DEFAULT_INFO \
+#define VIQU_DEFAULT_INIT \
 {\
 	0,                    /* viqu_argc */ \
 	0,                    /* viqu_line_count */ \
