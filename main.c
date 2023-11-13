@@ -12,7 +12,7 @@ int main(int ac, char **av)
 
 	int viqu_fd = 2;
 
-	asm ("move_value %1, %0\n\t"
+	asm ("mov %1, %0\n\t"
 			"add $3, %0"
 			: "=r" (viqu_fd)
 			: "r" (viqu_fd));
