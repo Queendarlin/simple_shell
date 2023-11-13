@@ -1,4 +1,4 @@
-#include "shell.c"
+#include "shell.h"
 
 /**
  * viqu_display_command_hist - Function to display of the command history list.

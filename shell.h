@@ -74,10 +74,9 @@ typedef struct viqu_list_str
  */
 typedef struct viqu_pass_info
 {
-	int *viqu_argc;
+	int viqu_argc;
 	unsigned int viqu_line_count;
-	int viqu_err_num;
-	char viqu_arg;
+	char *viqu_arg;
 	char **viqu_argv;
 	char *viqu_path;
 
@@ -85,39 +84,22 @@ typedef struct viqu_pass_info
 	int viqu_linecount_flag;
 	list_t *viqu_env;
 	list_t *viqu_history;
+	int viqu_err_num;
 	list_t *viqu_alias;
-	int viqu_hist_count;
+	char **viqu_cmd_buf;
 	char **viqu_environ;
 	int viqu_env_changed;
 	int viqu_status;
 
-	char **viqu_cmd_buf;
+	int viqu_hist_count;
 	int viqu_cmd_buffer_type;
 	int viqu_read_fd;
 
 } info_t;
 
 #define VIQU_DEFAULT_INIT \
-{\
-	0,                    /* viqu_argc */ \
-	0,                    /* viqu_line_count */ \
-	0,                    /* viqu_err_num */ \
-	NULL,                 /* viqu_arg */ \
-	NULL,                 /* viqu_argv */ \
-	NULL,                 /* viqu_path */ \
-	NULL,                 /* viqu_file_name */ \
-	0,                    /* viqu_linecount_flag */ \
-	NULL,                 /* env */ \
-	NULL,                 /* viqu_history */ \
-	NULL,                 /* viqu_alias */ \
-	0,			/* viqu_hist_count */ \
-	NULL,                 /* viqu_environ */ \
-	0,                    /* viqu_env_changed */ \
-	0,                    /* viqu_status */ \
-	NULL,                 /* viqu_cmd_buf */ \
-	0,                    /* viqu_cmd_buffer_type */ \
-	0                     /* viqu_read_fd */ \
-}
+{0, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, \
+	0, 0, 0}
 
 
 
@@ -126,6 +108,7 @@ typedef struct viqu_pass_info
  * @viqu_type: For different types of command
  * @viqu_func: The structure for function
  */
+
 typedef struct viqu_built_in
 {
 	char *viqu_type;

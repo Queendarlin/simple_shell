@@ -4,7 +4,6 @@
  * viqu_puts - Function to print a string to the standard output.
  * @viqu_str: Pointer to the string to be printed.
  *
- * Return: void
  */
 
 void viqu_puts(char *viqu_str)

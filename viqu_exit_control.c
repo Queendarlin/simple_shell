@@ -6,7 +6,8 @@
  *
  * Return: (-2) if an argument is provided, and (-2) for no specified exit
  */
-int viqu_exit_control(viqu_info_t *viqu_info)
+
+int viqu_exit_control(info_t *viqu_info)
 {
 	int viqu_exit_check;
 
