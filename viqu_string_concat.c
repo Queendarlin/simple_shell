@@ -8,23 +8,17 @@
  *
  * Return: A pointer to the resulting string (@viqu_dest).
  */
-char *viqu_string_concat(char *viqu_dest, char *viqu_src, int viqu_num)
+
+char *viqu_string_concat(char *viqu_dest, char *viqu_src)
 {
 	char *viqu_result = viqu_dest;
-	int viqu_index = 0, viqu_index2 = 0;
 
-	while (viqu_dest[viqu_index] != '\0')
-		viqu_index++;
+	while (*viqu_dest)
+		viqu_dest++;
 
-	while (viqu_src[viqu_index2] != '\0' && viqu_index2 < viqu_num)
-	{
-		viqu_dest[viqu_index] = viqu_src[viqu_index2];
-		viqu_index++;
-		viqu_index2++;
-	}
-
-	if (viqu_index2 < viqu_num)
-		viqu_dest[viqu_index] = '\0';
+	while (*viqu_src)
+		*viqu_dest++ = *viqu_src++;
+	*viqu_dest = *viqu_src;
 
 	return (viqu_result);
 }
