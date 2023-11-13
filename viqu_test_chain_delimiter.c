@@ -20,7 +20,7 @@ int viqu_test_chain_delimiter(info_t *viqu_info, char *viqu_buf,
 	{
 		viqu_buf[viqu_j] = 0;
 		viqu_j++;
-		viqu_info->viqu_cmd_buffer_type = VIQU_INSTRUCT_OR
+		viqu_info->viqu_cmd_buffer_type = VIQU_INSTRUCT_OR;
 	}
 	else if (viqu_buf[viqu_j] == '&' && viqu_buf[viqu_j + 1] == '&')
 	{

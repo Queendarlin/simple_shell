@@ -21,6 +21,8 @@ int viqu_unset_alias(info_t *viqu_info, char *viqu_str)
 
 	viqu_ret = viqu_del_node_idx(&(viqu_info->viqu_alias), 
 			gets_index_node(viqu_info->viqu_alias,
+	viqu_ret = viqu_del_node_idx(&(viqu_info->viqu_alias),
+			viqu_gets_index_node(viqu_info->viqu_alias,
 				viqu_prefix_node(viqu_info->viqu_alias, viqu_str, -1)));
 
 	*viqu_p = viqu_c;

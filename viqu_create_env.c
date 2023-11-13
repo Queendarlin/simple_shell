@@ -1,4 +1,5 @@
-#include “shell.h”
+#include "shell.h"
+
 /**
  * viqu_create_env - Function to create a new or modify environment variable.
  * @viqu_info: A structure to hold potential arguments.
@@ -6,6 +7,7 @@
  * @viqu_value: The value of the environment variable.
  * Return: 0 when successful.
  */
+
 int viqu_create_env(info_t *viqu_info, char *viqu_var, char *viqu_value)
 {
 	char *viqu_buf = NULL;

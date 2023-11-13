@@ -36,8 +36,8 @@ list_t *viqu_suffix_node(list_t **viqu_head, const char *viqu_string,
 
 	if (viqu_current_node)
 	{
-		while (viqu_current_node->next)
-			viqu_current_node = viqu_current_node->next;
+		while (viqu_current_node->viqu_next)
+			viqu_current_node = viqu_current_node->viqu_next;
 
 		viqu_current_node->viqu_next = viqu_new_node;
 	}

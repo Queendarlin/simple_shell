@@ -1,4 +1,4 @@
-#include “shell.h”
+#include "shell.h"
 
 /**
  * viqu_enter_hist_list - Function to enter the history of a linked list.
@@ -8,6 +8,7 @@
  *
  * Return: 0 when successful.
  */
+
 int viqu_enter_hist_list(info_t *viqu_info, char *viqu_buf, int viqu_linecount)
 {
 	list_t *viqu_node = NULL;

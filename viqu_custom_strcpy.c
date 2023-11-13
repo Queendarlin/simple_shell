@@ -1,4 +1,4 @@
-#include “shell.h”
+#include "shell.h"
 
 /**
  * viqu_custom_strcpy - Function to copy a source string to a destination
@@ -7,6 +7,7 @@
  *
  * Return: Returns a pointer to the destination string
  */
+
 char *viqu_custom_strcpy(char *viqu_dest, char *viqu_src)
 {
 	int viqu_index;

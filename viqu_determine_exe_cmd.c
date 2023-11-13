@@ -24,4 +24,4 @@ int viqu_determine_exe_cmd(info_t *viqu_info, char *viqu_path)
 	}
 
 	return (0);
-
+}

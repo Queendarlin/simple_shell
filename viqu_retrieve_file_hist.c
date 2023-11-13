@@ -1,4 +1,4 @@
-#include “shell.h”
+#include "shell.h"
 
 /**
  * viqu_retrieve_file_hist - Function to retrieve the history of a file path.
@@ -10,7 +10,7 @@ char *viqu_retrieve_file_hist(info_t *viqu_info)
 {
 	char *viqu_buf, *viqu_dir;
 
-	viqu_dir = viqu_getenv(viqu_info, "HOME=");
+	viqu_dir = viqu_gets_env(viqu_info, "HOME=");
 	if (!viqu_dir)
 		return (NULL);
 

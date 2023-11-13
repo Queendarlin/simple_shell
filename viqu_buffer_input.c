@@ -1,4 +1,4 @@
-#include “shell.h”
+#include "shell.h"
 
 /**
  * viqu_buffer_input - Function to get input in the buffer
@@ -8,6 +8,7 @@
  *
  * Return: The bytes read from the input command
  */
+
 ssize_t viqu_buffer_input(info_t *viqu_info, char **viqu_buf, size_t *viqu_len)
 {
 	ssize_t viqu_r = 0;

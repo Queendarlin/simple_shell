@@ -11,34 +11,34 @@
 char **viqu_array_string_list(list_t *viqu_head)
 {
 	list_t *viqu_node = viqu_head;
-	size_t viqu_i = viqu_length_of_list(viqu_head), viqu_jndex;
+	size_t viqu_i = viqu_length_of_list(viqu_head), viqu_j;
 	char **viqu_strs;
 	char *viqu_str;
 
-	if (!viqu_head || !viqu_index)
+	if (!viqu_head || !viqu_i)
 		return (NULL);
 
-	viqu_strs = malloc(sizeof(char *) * (viqu_index + 1));
+	viqu_strs = malloc(sizeof(char *) * (viqu_i + 1));
 	if (!viqu_strs)
 		return (NULL);
 
-	for (viqu_index = 0; viqu_node; viqu_node = viqu_node->viqu_next,
-			viqu_index++)
+	for (viqu_i = 0; viqu_node; viqu_node = viqu_node->viqu_next,
+			viqu_i++)
 	{
 		viqu_str = malloc(viqu_custom_strlen(viqu_node->viqu_str) + 1);
 		if (!viqu_str)
 		{
-			for (viqu_jndex = 0; viqu_jndex < viqu_index; viqu_jndex++)
-				free(viqu_strs[viqu_jndex]);
+			for (viqu_j = 0; viqu_j < viqu_i; viqu_j++)
+				free(viqu_strs[viqu_j]);
 			free(viqu_strs);
 			return (NULL);
 		}
 
 		viqu_str = viqu_custom_strcpy(viqu_str, viqu_node->viqu_str);
 
-		viqu_strs[viqu_index] = viqu_str;
+		viqu_strs[viqu_i] = viqu_str;
 	}
-	viqu_strs[viqu_index] = NULL;
+	viqu_strs[viqu_i] = NULL;
 
 	return (viqu_strs);
 }

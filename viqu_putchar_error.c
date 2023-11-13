@@ -1,4 +1,4 @@
-#include “shell.h”
+#include "shell.h"
 
 /**
  * viqu_putchar_error - Function that writes a character to the stderr
@@ -6,6 +6,7 @@
  *
  * Return: 1 when successful.
  */
+
 int viqu_putchar_error(char viqu_char)
 {
 	static int viqu_index;

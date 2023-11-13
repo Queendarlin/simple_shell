@@ -1,4 +1,4 @@
-#include “shell.h”
+#include "shell.h"
 
 /**
  * viqu_putchar - Function to Write the character viqu_c to stdout
@@ -7,6 +7,7 @@
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
+
 int viqu_putchar(char viqu_c)
 {
 	static int viqu_index;
