@@ -38,7 +38,7 @@ int viqu_getsline(info_t *viqu_info, char **viqu_ptr, size_t *viqu_length)
 	if (viqu_size)
 		viqu_string_concat(viqu_new_p, viqu_buf + viqu_i, viqu_k - viqu_i);
 	else
-		viqu _copy_string(viqu_new_p, viqu_buf + viqu_i, viqu_k - viqu_i + 1);
+		viqu_copy_string(viqu_new_p, viqu_buf + viqu_i, viqu_k - viqu_i + 1);
 
 	viqu_size += viqu_k - viqu_i;
 	viqu_i = viqu_k;

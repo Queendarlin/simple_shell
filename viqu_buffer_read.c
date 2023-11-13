@@ -8,6 +8,7 @@
  *
  * Return: The whole inputs read
  */
+
 ssize_t viqu_buffer_read(info_t *viqu_info, char *viqu_buf, size_t *viqu_idx)
 {
 	ssize_t viqu_read = 0;

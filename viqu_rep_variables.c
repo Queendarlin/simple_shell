@@ -26,7 +26,7 @@ int viqu_rep_variables(info_t *viqu_info)
 		if (!viqu_custom_strcmp(viqu_info->viqu_argv[viqu_index], "$$"))
 		{
 			viqu_rep_str(&(viqu_info->viqu_argv[viqu_index]),
-					viqu_custom_strdup(viqu_int_to_string(viqu_getpid(), 10, 0)));
+					viqu_custom_strdup(viqu_int_to_string(getpid(), 10, 0)));
 			continue;
 		}
 		viqu_node = viqu_prefix_node

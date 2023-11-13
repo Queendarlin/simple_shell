@@ -7,6 +7,7 @@
  * If 'str' is NULL, it prints "(nil)".
  * Return: The linked list size
  */
+
 size_t viqu_print_str_element(const list_t *viqu_head)
 {
 	size_t viqu_index = 0;
@@ -15,7 +16,7 @@ size_t viqu_print_str_element(const list_t *viqu_head)
 	{
 		viqu_puts(viqu_head->viqu_str ? viqu_head->viqu_str : "(nil)");
 		viqu_puts("\n");
-		viqu_head = viqu_head->next;
+		viqu_head = viqu_head->viqu_next;
 		viqu_index++;
 	}
 

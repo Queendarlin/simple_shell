@@ -29,7 +29,7 @@ int viqu_change_directory(info_t *g)
 			viqu_putchar('\n');
 			return (1);
 		}
-		viqu_puts(_viqu_obtain_environ(g, "OLDPWD="));
+		viqu_puts(viqu_obtain_environ(g, "OLDPWD="));
 		viqu_putchar('\n');
 		viqu_r = chdir((viqu_d = viqu_obtain_environ(g, "OLDPWD=")) ? viqu_d : "/");
 	}
