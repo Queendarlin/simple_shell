@@ -20,7 +20,7 @@ void viqu_free_all_nodes(list_t **viqu_head_ptr)
 	while (viqu_node)
 	{
 		viqu_next_node = viqu_node->viqu_next;
-		free(viqu_node->viqu_string);
+		free(viqu_node->viqu_str);
 		free(viqu_node);
 
 		viqu_node = viqu_next_node;

@@ -18,6 +18,7 @@ int viqu_error_check_int(char *viqu_string)
 	for (viqu_index = 0; viqu_string[viqu_index] != '\0'; viqu_index++)
 	{
 		if (viqu_string[viqu_index] >= '0' && viqu_string[viqu_index] <= '9')
+		{
 			viqu_result *= 10;
 			viqu_result += (viqu_string[viqu_index] - '0');
 

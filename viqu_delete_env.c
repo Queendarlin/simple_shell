@@ -22,7 +22,7 @@ int viqu_delete_env(info_t *viqu_info, char *viqu_var)
 		if (viqu_ptr && *viqu_ptr == '=')
 		{
 			viqu_info->viqu_env_changed =
-				viqu_delete_node_at_idx(&(viqu_info->viqu_env), viqu_idx);
+				viqu_del_node_idx(&(viqu_info->viqu_env), viqu_idx);
 			viqu_idx = 0;
 			viqu_node = viqu_info->viqu_env;
 			continue;

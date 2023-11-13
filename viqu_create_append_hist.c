@@ -22,7 +22,7 @@ int viqu_create_append_hist(info_t *viqu_info)
 		return (-1);
 
 	for (viqu_node = viqu_info->viqu_history;
-			viqu_node; viqu_node = viqu_node->next)
+			viqu_node; viqu_node = viqu_node->viqu_next)
 	{
 		viqu_puts_file_d(viqu_node->viqu_str, viqu_fd);
 		viqu_put_file_d('\n', viqu_fd);

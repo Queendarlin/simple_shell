@@ -74,10 +74,10 @@ typedef struct viqu_list_str
  */
 typedef struct viqu_pass_info
 {
-	char *viqu_argc;
+	int *viqu_argc;
 	unsigned int viqu_line_count;
 	int viqu_err_num;
-	int viqu_arg;
+	char viqu_arg;
 	char **viqu_argv;
 	char *viqu_path;
 

@@ -14,7 +14,7 @@ void viqu_free_list_field(info_t *viqu_info, int viqu_every)
 	if (viqu_every)
 	{
 		if (!viqu_info->viqu_cmd_buf)
-			viqu_free(viqu_info->viqu_arg);
+			viqu_free_ptr(viqu_info->viqu_arg);
 
 		if (viqu_info->viqu_env)
 			viqu_free_all_nodes(&(viqu_info->viqu_env));

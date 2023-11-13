@@ -30,7 +30,7 @@ int viqu_find_cmd_builtin(info_t *viqu_info)
 					viqu_builtintbl[viqu_index].viqu_type) == 0)
 		{
 			viqu_info->viqu_line_count++;
-			viqu_builtin_ret = viqu_builtintbl[viqu_i].viqu_func(viqu_info);
+			viqu_builtin_ret = viqu_builtintbl[viqu_index].viqu_func(viqu_info);
 			break;
 		}
 	}
