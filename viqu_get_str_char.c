@@ -8,6 +8,7 @@
  * Return: A pointer to the first occurrence of @viqu_character in
  * @viqu_string, or NULL if @viqu_character is not found.
  */
+
 char *viqu_get_str_char(char *viqu_string, char viqu_character)
 {
 	do {

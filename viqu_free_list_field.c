@@ -30,11 +30,9 @@ void viqu_free_list_field(info_t *viqu_info, int viqu_every)
 		viqu_info->viqu_environ = NULL;
 
 		viqu_free_ptr((void **)viqu_info->viqu_cmd_buf);
-
 		if (viqu_info->viqu_read_fd > 2)
 			close(viqu_info->viqu_read_fd);
 
 		viqu_putchar(VIQU_FLUSH_BUFFER);
 	}
 }
-
