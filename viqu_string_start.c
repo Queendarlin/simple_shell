@@ -8,13 +8,11 @@
  * Return: The address of the next character in viqu_haystack if viqu_needle
  * starts with viqu_haystack, or NULL otherwise.
  */
+
 char *viqu_string_start(const char *viqu_haystack, const char *viqu_needle)
 {
 	while (*viqu_needle)
-	{
 		if (*viqu_needle++ != *viqu_haystack++)
 			return (NULL);
-	}
-
 	return ((char *)viqu_haystack);
 }
