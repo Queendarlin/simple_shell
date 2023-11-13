@@ -17,9 +17,9 @@ int viqu_set_alias(info_t *viqu_info, char *viqu_str)
 		return (1);
 
 	if (!*++viqu_p)
-		return (viqu_set_alias(viqu_info, viqu_str));
+		return (viqu_unset_alias(viqu_info, viqu_str));
 
-	viqu_set_alias(viqu_info, viqu_str);
+	viqu_unset_alias(viqu_info, viqu_str);
 
-	return (viqu_suffix_node(&(viqu_info->viqu_alias), viqu_str, 0) == NULL);
+	return (viqu_suffix_node(&(viqu_info->viqu_custom_alias), viqu_str, 0) == NULL);
 }
