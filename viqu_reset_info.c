@@ -5,6 +5,7 @@
  * @viqu_info: Pointer to the list to be initialized.
  *
  */
+
 void viqu_reset_info(info_t *viqu_info)
 {
 	viqu_info->viqu_arg = NULL;

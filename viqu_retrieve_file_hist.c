@@ -6,6 +6,7 @@
  *
  * Return: The specified string containing the history file path
  */
+
 char *viqu_retrieve_file_hist(info_t *viqu_info)
 {
 	char *viqu_buf, *viqu_dir;
@@ -21,11 +22,11 @@ char *viqu_retrieve_file_hist(info_t *viqu_info)
 
 	viqu_buf[0] = 0;
 
-	viqu_custom_strcpy(viqu_buf, viqu_dir);
+	viqu_string_concat2(viqu_buf, viqu_dir);
 
-	viqu_custom_strcat(viqu_buf, "/");
+	viqu_string_concat2(viqu_buf, "/");
 
-	viqu_custom_strcat(viqu_buf, VIQU_FILE_HIISTORY);
+	viqu_string_concat2(viqu_buf, VIQU_FILE_HIISTORY);
 
 	return (viqu_buf);
 }
