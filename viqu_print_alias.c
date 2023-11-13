@@ -15,9 +15,8 @@ int viqu_print_alias(list_t *viqu_node)
 		viqu_p = viqu_get_str_char(viqu_node->viqu_str, '=');
 
 		for (viqu_a = viqu_node->viqu_str; viqu_a <= viqu_p; viqu_a++)
-			viqu_putchar(*viqu_a);
+		viqu_putchar(*viqu_a);
 		viqu_putchar('\'');
-
 		viqu_puts(viqu_p + 1);
 		viqu_puts("'\n");
 

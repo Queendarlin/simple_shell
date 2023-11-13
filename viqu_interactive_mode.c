@@ -7,5 +7,5 @@
  */
 int viqu_interactive_mode(info_t *viqu_info)
 {
-	return (viqu_isatty(STDIN_FILENO) && viqu_info->viqu_read_fd <= 2);
+	return (isatty(fileno(stdin)) && viqu_info->viqu_read_fd <= 2);
 }
