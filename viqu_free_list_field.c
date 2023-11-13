@@ -5,6 +5,7 @@
  * @viqu_info: Pointer to the structure to be freed.
  * @viqu_every: The parameter to know if every field should be freed
  */
+
 void viqu_free_list_field(info_t *viqu_info, int viqu_every)
 {
 	viqu_free_web_string(viqu_info->viqu_argv);

@@ -6,6 +6,7 @@
  * @av: Pointer to array of strings representing the command-line arguments
  * Return: 0 upon successful execution, 1 if an error occurs
  */
+
 int main(int ac, char **av)
 {
 	info_t viqu_info[] = { VIQU_DEFAULT_INIT };
