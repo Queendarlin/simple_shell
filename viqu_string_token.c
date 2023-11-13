@@ -13,7 +13,7 @@ char **viqu_string_token(char *viqu_str, char viqu_delim)
 	int viqu_index, viqu_j, viqu_k, viqu_m, viqu_num_words = 0;
 	char **viqu_words;
 
-	if (viqu_str == NULL || viqu_str[0] == '\0')
+	if (viqu_str == NULL || viqu_str[0] == 0)
 		return (NULL);
 	for (viqu_index = 0; viqu_str[viqu_index] != '\0'; viqu_index++)
 		if ((viqu_str[viqu_index] != viqu_delim &&
@@ -46,7 +46,7 @@ char **viqu_string_token(char *viqu_str, char viqu_delim)
 		}
 		for (viqu_m = 0; viqu_m < viqu_k; viqu_m++)
 			viqu_words[viqu_j][viqu_m] = viqu_str[viqu_index++];
-		viqu_words[viqu_j][viqu_m] = '\0';
+		viqu_words[viqu_j][viqu_m] = 0;
 	}
 	viqu_words[viqu_j] = NULL;
 	return (viqu_words);
