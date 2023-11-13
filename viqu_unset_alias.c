@@ -7,7 +7,6 @@
  *
  * Return: 0 when successful or (1) on error.
  */
-
 int viqu_unset_alias(info_t *viqu_info, char *viqu_str)
 {
 	char *viqu_p, viqu_c;
@@ -25,6 +24,5 @@ int viqu_unset_alias(info_t *viqu_info, char *viqu_str)
 				viqu_prefix_node(viqu_info->viqu_alias, viqu_str, -1)));
 
 	*viqu_p = viqu_c;
-
 	return (viqu_ret);
 }
