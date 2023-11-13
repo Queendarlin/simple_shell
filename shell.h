@@ -44,6 +44,7 @@ extern char **viqu_environ;
  * @viqu_str: The linked list string
  * @viqu_next: Depicts the linked list next node
  */
+
 typedef struct viqu_list_str
 {
 	int viqu_num;
@@ -252,6 +253,7 @@ void viqu_check_str_chain(info_t *viqu_info, char *viqu_buf,
 int viqu_rep_alias(info_t *viqu_info);
 int viqu_rep_variables(info_t *viqu_info);
 int viqu_rep_str(char **viqu_old, char *viqu_new);
+
 /** alias */
 int viqu_set_alias(info_t *viqu_info, char *viqu_str);
 int viqu_print_alias(list_t *viqu_node);
