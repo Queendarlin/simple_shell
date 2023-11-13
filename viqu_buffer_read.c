@@ -15,7 +15,7 @@ ssize_t viqu_buffer_read(info_t *viqu_info, char *viqu_buf, size_t *viqu_idx)
 	if (*viqu_idx)
 		return (0);
 	viqu_read = read(viqu_info->viqu_read_fd, viqu_buf, VIQU_GET_BUFFER_SIZE);
-	if (viqu_r >= 0)
+	if (viqu_read >= 0)
 		*viqu_idx = viqu_read;
 	return (viqu_read);
 }
