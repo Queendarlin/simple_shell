@@ -72,6 +72,7 @@ typedef struct viqu_list_str
  * @viqu_read_fd: Reading through the file descriptor
  * @viqu_hist_count: the history line number count
  */
+
 typedef struct viqu_pass_info
 {
 	int viqu_argc;
@@ -100,7 +101,6 @@ typedef struct viqu_pass_info
 #define VIQU_DEFAULT_INIT \
 {0, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, \
 	0, 0, 0}
-
 
 
 /**
@@ -252,5 +252,8 @@ void viqu_check_str_chain(info_t *viqu_info, char *viqu_buf,
 int viqu_rep_alias(info_t *viqu_info);
 int viqu_rep_variables(info_t *viqu_info);
 int viqu_rep_str(char **viqu_old, char *viqu_new);
+/** alias */
+int viqu_set_alias(info_t *viqu_info, char *viqu_str);
+int viqu_print_alias(list_t *viqu_node);
 
 #endif
