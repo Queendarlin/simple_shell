@@ -7,6 +7,7 @@
  * Return: Returns the converted number if valid, 0 if no numbers in the str
  * or -1 on error.
  */
+
 int viqu_error_check_int(char *viqu_string)
 {
 	int viqu_index = 0;
