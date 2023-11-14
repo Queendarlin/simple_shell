@@ -12,9 +12,9 @@ char *viqu_custom_strcpy(char *viqu_dest, char *viqu_src)
 {
 	int viqu_index = 0;
 
-	if (dest == src || src == 0)
-		return (dest);
-	while (src[viqu_index])
+	if (viqu_dest == viqu_src || viqu_src == 0)
+		return (viqu_dest);
+	while (viqu_src[viqu_index])
 	{
 		viqu_dest[viqu_index] = viqu_src[viqu_index];
 		viqu_index++;
