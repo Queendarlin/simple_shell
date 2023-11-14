@@ -22,12 +22,12 @@ list_t *viqu_suffix_node(list_t **viqu_head, const char *viqu_string,
 		return (NULL);
 
 	viqu_memory_set((void *)viqu_new_node, 0, sizeof(list_t));
-	viqu_new_node->viqu_n = viqu_n;
+	viqu_new_node->viqu_num = viqu_n;
 
 	if (viqu_string)
 	{
-		viqu_new_node->viqu_string = viqu_custom_strdup(viqu_string);
-		if (!viqu_new_node->viqu_string)
+		viqu_new_node->viqu_str = viqu_custom_strdup(viqu_string);
+		if (!viqu_new_node->viqu_str)
 		{
 			free(viqu_new_node);
 			return (NULL);
