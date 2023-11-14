@@ -12,7 +12,7 @@ int viqu_custom_strlen(char *viqu_string)
 	if (!viqu_string)
 		return (0);
 
-	while (viqu_string[viqu_index])
+	while (*viqu_string++)
 		viqu_index++;
 
 	return (viqu_index);

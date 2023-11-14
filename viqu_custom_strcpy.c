@@ -10,10 +10,16 @@
 
 char *viqu_custom_strcpy(char *viqu_dest, char *viqu_src)
 {
-	int viqu_index;
+	int viqu_index = 0;
 
-	for (viqu_index = 0; viqu_src[viqu_index] != '\0'; viqu_index++)
+	if (dest == src || src == 0)
+		return (dest);
+	while (src[viqu_index])
+	{
 		viqu_dest[viqu_index] = viqu_src[viqu_index];
-	viqu_dest[viqu_index] = '\0';
+		viqu_index++;
+	}
+
+	viqu_dest[viqu_index] = 0;
 	return (viqu_dest);
 }
