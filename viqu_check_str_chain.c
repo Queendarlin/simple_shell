@@ -8,7 +8,6 @@
  * @viqu_p: Address of the current position in the buffer.
  * @viqu_index: Starting position in the buffer.
  * @viqu_len: Length of the buffer.
- * Return: ..
  */
 
 void viqu_check_str_chain(info_t *viqu_info, char *viqu_buf, size_t *viqu_p,
