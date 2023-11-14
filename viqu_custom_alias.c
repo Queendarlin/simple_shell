@@ -13,7 +13,7 @@ int viqu_custom_alias(info_t *viqu_info)
 	char *viqu_ptr = NULL;
 	list_t *viqu_current_node = NULL;
 
-	if ((viqu_info->viqu_argc) == 1)
+	if (viqu_info->viqu_argc == 1)
 	{
 		viqu_current_node = viqu_info->viqu_alias;
 		while (viqu_current_node)

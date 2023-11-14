@@ -19,7 +19,8 @@ int viqu_change_directory(info_t *g)
 		viqu_d = viqu_obtain_environ(g, "HOME=");
 		if (!viqu_d)
 			viqu_r = chdir((viqu_d = viqu_obtain_environ(g, "PWD=")) ? viqu_d : "/");
-		viqu_r = chdir(viqu_d);
+		else
+			viqu_r = chdir(viqu_d);
 	}
 	else if (viqu_custom_strcmp(g->viqu_argv[1], "-") == 0)
 	{
@@ -38,8 +39,7 @@ int viqu_change_directory(info_t *g)
 	if (viqu_r  == -1)
 	{
 		viqu_display_error(g, "can't cd to ");
-		viqu_puts_error(g->viqu_argv[1]);
-		viqu_putchar_error('\n');
+		viqu_puts_error(g->viqu_argv[1]), viqu_putchar_error('\n');
 	}
 	else
 	{
