@@ -8,13 +8,14 @@
 
 void viqu_puts(char *viqu_str)
 {
-	int viqu_index;
+	int viqu_index = 0;
 
 	if (!viqu_str)
 		return;
 
-	for (viqu_index = 0; viqu_str[viqu_index] != '\0'; viqu_index++)
+	while (viqu_str[viqu_index] != '\0')
 	{
 		viqu_putchar(viqu_str[viqu_index]);
+		viqu_index++;
 	}
 }

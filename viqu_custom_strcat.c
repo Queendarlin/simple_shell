@@ -14,7 +14,6 @@ char *viqu_custom_strcat(char *viqu_dest, char *viqu_src)
 
 	while (*viqu_dest)
 		viqu_dest++;
-
 	while (*viqu_src)
 		*viqu_dest++ = *viqu_src++;
 	*viqu_dest = *viqu_src;

@@ -233,7 +233,7 @@ int viqu_renum_hist_list(info_t *viqu_info);
 list_t *viqu_affix_node(list_t **viqu_head,
 		const char *viqu_string, int viqu_n);
 list_t *viqu_suffix_node(list_t **viqu_head,
-		const char *viqu_string, int viqu_n);
+		const char *viqu_string, int viqu_num);
 size_t viqu_print_str_element(const list_t *viqu_head);
 int viqu_del_node_idx(list_t **viqu_head, unsigned int viqu_index);
 void viqu_free_all_nodes(list_t **viqu_head_ptr);
