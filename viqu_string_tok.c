@@ -18,7 +18,7 @@ char **viqu_strtow(char *viqu_str, char *viqu_d)
 	if (!viqu_d)
 		viqu_d = " ";
 	for (viqu_i = 0; viqu_str[viqu_i] != '\0'; viqu_i++)
-		if (!viqu_is_delim(viqu_str[viqu_i], d) &&
+		if (!viqu_is_delim(viqu_str[viqu_i], viqu_d) &&
 				(viqu_is_delim(viqu_str[viqu_i + 1], viqu_d) || !viqu_str[viqu_i + 1]))
 			viqu_numwords++;
 
@@ -67,9 +67,9 @@ char **viqu_strtow2(char *viqu_str, char viqu_d)
 	if (viqu_str == NULL || viqu_str[0] == 0)
 		return (NULL);
 	for (viqu_i = 0; viqu_str[viqu_i] != '\0'; viqu_i++)
-		if ((viqu_str[viqu_i] != viqu_d && viqu_str[viqu_i + 1] == d) ||
+		if ((viqu_str[viqu_i] != viqu_d && viqu_str[viqu_i + 1] == viqu_d) ||
 				(viqu_str[viqu_i] != viqu_d &&
-				 !viqu_str[i + 1]) || viqu_str[viqu_i + 1] == viqu_d)
+				 !viqu_str[viqu_i + 1]) || viqu_str[viqu_i + 1] == viqu_d)
 			viqu_numwords++;
 	if (viqu_numwords == 0)
 		return (NULL);

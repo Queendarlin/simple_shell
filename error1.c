@@ -4,7 +4,7 @@
  * viqu_erratoi - converts a string to an integer
  * @viqu_ss: the string to be converted
  * Return: 0 if no numbers in string, converted number otherwise
- *   	-1 on error
+ * -1 on error
  */
 
 int viqu_erratoi(char *viqu_ss)
@@ -30,17 +30,15 @@ int viqu_erratoi(char *viqu_ss)
 }
 
 
-#include "shell.h"
-
 /**
  * viqu_print_error - prints an error message
  * @viqu_info: the parameter & return info struct
  * @viqu_estr: string containing specified error type
  * Return: 0 if no numbers in string, converted number otherwise
- *    	-1 on error
+ * -1 on error
  */
 
-void print_error(info_t *viqu_info, char *viqu_estr)
+void viqu_print_error(info_t *viqu_info, char *viqu_estr)
 {
 	viqu_eputs(viqu_info->viqu_fname);
 	viqu_eputs(": ");
@@ -51,8 +49,6 @@ void print_error(info_t *viqu_info, char *viqu_estr)
 	viqu_eputs(viqu_estr);
 }
 
-
-#include "shell.h"
 
 /**
  * viqu_print_d - function prints a decimal (integer) number (base 10)
@@ -94,8 +90,6 @@ int viqu_print_d(int viqu_insert, int viqu_filedes)
 	return (viqu_dig);
 }
 
-#include "shell.h"
-
 /**
  * viqu_convert_number - converter function, a clone of itoa
  * @viqu_num: number
@@ -118,21 +112,20 @@ char *viqu_convert_number(long int viqu_num, int viqu_base, int viqu_flags)
 		viqu_sign = '-';
 
 	}
-	viqu_array = viqu_flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
+	viqu_array = viqu_flags & CONVERT_LOWERCASE ?
+		"0123456789abcdef" : "0123456789ABCDEF";
 	viqu_ptr = &viqu_buffer[49];
 	*viqu_ptr = '\0';
 
-	do      	{
+	do {
 		*--viqu_ptr = viqu_array[viqu_n % viqu_base];
 		viqu_n /= viqu_base;
-	} viqu_while (viqu_n != 0);
+	} while (viqu_n != 0);
 
 	if (viqu_sign)
 		*--viqu_ptr = viqu_sign;
 	return (viqu_ptr);
 }
-
-#include "shell.h"
 
 /**
  * viqu_remove_comments - function replaces first instance of '#' with '\0'
@@ -140,12 +133,13 @@ char *viqu_convert_number(long int viqu_num, int viqu_base, int viqu_flags)
  *
  * Return: Always 0;
  */
-void remove_comments(char *viqu_adstr)
+void viqu_remove_comments(char *viqu_adstr)
 {
 	int viqu_idx;
 
 	for (viqu_idx = 0; viqu_adstr[viqu_idx] != '\0'; viqu_idx++)
-		if (viqu_adstr[viqu_idx] == '#' && (!viqu_idx || viqu_adstr[viqu_idx - 1] == ' '))
+		if (viqu_adstr[viqu_idx] == '#' &&
+				(!viqu_idx || viqu_adstr[viqu_idx - 1] == ' '))
 		{
 			viqu_adstr[viqu_idx] = '\0';
 			break;

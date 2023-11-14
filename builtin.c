@@ -45,12 +45,12 @@ int viqu_mycd(info_t *viqu_info)
 	{
 		viqu_dir = viqu_getenv(viqu_info, "HOME=");
 		if (!viqu_dir)
-			viqu_chdir_ret = /* TODO: what should this be? */
-				viqu_chdir((viqu_dir = viqu_getenv(viqu_info, "PWD=")) ? viqu_dir : "/");
+			viqu_chdir_ret =
+				chdir((viqu_dir = viqu_getenv(viqu_info, "PWD=")) ? viqu_dir : "/");
 		else
-			viqu_chdir_ret = viqu_chdir(viqu_dir);
+			viqu_chdir_ret = chdir(viqu_dir);
 	}
-	else if (_strcmp(viqu_info->viqu_argv[1], "-") == 0)
+	else if (viqu_strcmp(viqu_info->viqu_argv[1], "-") == 0)
 	{
 		if (!viqu_getenv(viqu_info, "OLDPWD="))
 		{
@@ -59,15 +59,15 @@ int viqu_mycd(info_t *viqu_info)
 			return (1);
 		}
 		viqu_puts(viqu_getenv(viqu_info, "OLDPWD=")), viqu_putchar('\n');
-		viqu_chdir_ret = /* TODO: what should this be? */
-			viqu_chdir((viqu_dir = viqu_getenv(viqu_info, "OLDPWD=")) ? viqu_dir : "/");
+		viqu_chdir_ret =
+			chdir((viqu_dir = viqu_getenv(viqu_info, "OLDPWD=")) ? viqu_dir : "/");
 	}
 	else
-		viqu_chdir_ret = viqu_chdir(viqu_info->viqu_argv[1]);
+		viqu_chdir_ret = chdir(viqu_info->viqu_argv[1]);
 	if (viqu_chdir_ret == -1)
 	{
-		print_error(viqu_info, "can't cd to ");
-		_eputs(viqu_info->viqu_argv[1]), _eputchar('\n');
+		viqu_print_error(viqu_info, "can't cd to ");
+		viqu_eputs(viqu_info->viqu_argv[1]), viqu_eputchar('\n');
 	}
 	else
 	{

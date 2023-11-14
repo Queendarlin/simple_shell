@@ -10,7 +10,7 @@
  * Return: 1 if the current character is a chain delimiter,else 0
  */
 
-int viqu_is_chain(vinfo_t *viqu_info, char *viqu_buf, size_t *viqu_p)
+int viqu_is_chain(info_t *viqu_info, char *viqu_buf, size_t *viqu_p)
 {
 	size_t viqu_j = *viqu_p;
 
@@ -20,7 +20,7 @@ int viqu_is_chain(vinfo_t *viqu_info, char *viqu_buf, size_t *viqu_p)
 		viqu_j++;
 		viqu_info->viqu_cmd_buf_type = CMD_OR;
 	}
-	else if (viqu_[j] == '&' && viqu_buf[j + 1] == '&')
+	else if (viqu_buf[viqu_j] == '&' && viqu_buf[viqu_j + 1] == '&')
 	{
 		viqu_buf[viqu_j] = 0;
 		viqu_j++;
@@ -33,7 +33,7 @@ int viqu_is_chain(vinfo_t *viqu_info, char *viqu_buf, size_t *viqu_p)
 	}
 	else
 		return (0);
-	*viqu_viqu_p = viqu_j;
+	*viqu_p = viqu_j;
 	return (1);
 }
 
@@ -78,7 +78,7 @@ void check_chain(info_t *viqu_info, char *viqu_buf,
  *
  * Return: 1 on successful alias replacement, else 0.
  */
-int viqu_replace_alias(nfo_t *viqu_info)
+int viqu_replace_alias(info_t *viqu_info)
 {
 	int viqu_index;
 	list_t *viqu_node;
@@ -94,10 +94,10 @@ int viqu_replace_alias(nfo_t *viqu_info)
 		viqu_p = viqu_strchr(viqu_node->viqu_str, '=');
 		if (!viqu_p)
 			return (0);
-		viqu_p = viqu_strdup(p + 1);
+		viqu_p = viqu_strdup(viqu_p + 1);
 		if (!viqu_p)
 			return (0);
-		viqu_info->viqu_argv[0] = p;
+		viqu_info->viqu_argv[0] = viqu_p;
 	}
 	return (1);
 }
@@ -113,7 +113,7 @@ int viqu_replace_vars(info_t *viqu_info)
 	int viqu_index = 0;
 	list_t *viqu_node;
 
-	for (viqu_index = 0; viqu_info->viqu_argv[viqu_index]; i++)
+	for (viqu_index = 0; viqu_info->viqu_argv[viqu_index]; viqu_index++)
 	{
 		if (viqu_info->viqu_argv[viqu_index][0]
 				!= '$' || !viqu_info->viqu_argv[viqu_index][1])
@@ -155,7 +155,7 @@ int viqu_replace_vars(info_t *viqu_info)
 int viqu_replace_string(char **viqu_old, char *viqu_new)
 {
 	free(*viqu_old);
-	*old = viqu_new;
+	*viqu_old = viqu_new;
 	return (1);
 }
 

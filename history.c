@@ -1,6 +1,5 @@
 #include "shell.h"
 
-
 /**
  * viqu_get_history_file - gets the history file
  * @viqu_info: parameter struct
@@ -12,10 +11,11 @@ char *viqu_get_history_file(info_t *viqu_info)
 {
 	char *viqu_buf, *viqu_dir;
 
-	dir = viqu_getenv(viqu_info, "HOME=");
+	viqu_dir = viqu_getenv(viqu_info, "HOME=");
 	if (!viqu_dir)
 		return (NULL);
-	viqu_buf = malloc(sizeof(char) * (viqu_strlen(viqu_dir) + viqu_strlen(HIST_FILE) + 2));
+	viqu_buf = malloc(sizeof(char) * (viqu_strlen(viqu_dir) +
+				viqu_strlen(HIST_FILE) + 2));
 	if (!viqu_buf)
 		return (NULL);
 	viqu_buf[0] = 0;
@@ -25,8 +25,6 @@ char *viqu_get_history_file(info_t *viqu_info)
 	return (viqu_buf);
 }
 
-
-#include "shell.h"
 
 
 /**
@@ -48,7 +46,8 @@ int viqu_write_history(info_t *viqu_info)
 	free(viqu_filename);
 	if (viqu_fd == -1)
 		return (-1);
-	for (viqu_node = viqu_info->viqu_history; viqu_node; viqu_node = viqu_node->viqu_next)
+	for (viqu_node = viqu_info->viqu_history;
+			viqu_node; viqu_node = viqu_node->viqu_next)
 	{
 		viqu_putsfd(viqu_node->viqu_str, viqu_fd);
 		viqu_putfd('\n', viqu_fd);
@@ -58,8 +57,6 @@ int viqu_write_history(info_t *viqu_info)
 	return (1);
 }
 
-
-#include "shell.h"
 
 
 /**
@@ -73,7 +70,7 @@ int viqu_read_history(info_t *viqu_info)
 	int viqu_i, viqu_last = 0, viqu_linecount = 0;
 	ssize_t viqu_fd, viqu_rdlen, viqu_fsize = 0;
 	struct stat viqu_st;
-	char *viqu_buf = NULL, *viqu_filename = viqu_get_history_file(info);
+	char *viqu_buf = NULL, *viqu_filename = viqu_get_history_file(viqu_info);
 
 	if (!viqu_filename)
 		return (0);
@@ -102,7 +99,8 @@ int viqu_read_history(info_t *viqu_info)
 			viqu_last = viqu_i + 1;
 		}
 	if (viqu_last != viqu_i)
-		viqu_build_history_list(viqu_info, viqu_buf + viqu_last, viqu_linecount++);
+		viqu_build_history_list(viqu_info,
+				viqu_buf + viqu_last, viqu_linecount++);
 	free(viqu_buf);
 	viqu_info->viqu_histcount = viqu_linecount;
 	while (viqu_info->viqu_histcount-- >= HIST_MAX)
@@ -110,9 +108,6 @@ int viqu_read_history(info_t *viqu_info)
 	viqu_renumber_history(viqu_info);
 	return (viqu_info->viqu_histcount);
 }
-
-#include "shell.h"
-
 
 
 /**
@@ -123,7 +118,8 @@ int viqu_read_history(info_t *viqu_info)
  *
  * Return: Always 0
  */
-int viqu_build_history_list(info_t *viqu_info, char *viqu_buf, int viqu_linecount)
+int viqu_build_history_list(info_t *viqu_info,
+		char *viqu_buf, int viqu_linecount)
 {
 	list_t *viqu_node = NULL;
 
@@ -136,8 +132,6 @@ int viqu_build_history_list(info_t *viqu_info, char *viqu_buf, int viqu_linecoun
 	return (0);
 }
 
-
-#include "shell.h"
 
 
 /**
@@ -156,5 +150,5 @@ int viqu_renumber_history(info_t *viqu_info)
 		viqu_node->viqu_num = viqu_i++;
 		viqu_node = viqu_node->viqu_next;
 	}
-	return (viqu_info->viqu_histcount = i);
+	return (viqu_info->viqu_histcount = viqu_i);
 }

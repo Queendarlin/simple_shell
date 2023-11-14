@@ -31,7 +31,7 @@ int main(int viqu_ac, char **viqu_av)
 				viqu_eputs(": 0: Can't open ");
 				viqu_eputs(viqu_av[1]);
 				viqu_eputchar('\n');
-				viqu _eputchar(BUF_FLUSH);
+				viqu_eputchar(BUF_FLUSH);
 				exit(127);
 			}
 			return (EXIT_FAILURE);

@@ -85,7 +85,7 @@ typedef struct viqu_passinfo
 	list_t *viqu_env;
 	list_t *viqu_history;
 	list_t *viqu_alias;
-	char **viqu_environ;
+	char **environ;
 	int viqu_env_changed;
 	int viqu_status;
 
@@ -222,7 +222,7 @@ void viqu_free_list(list_t **);
 size_t viqu_list_len(const list_t *);
 char **viqu_list_to_strings(list_t *);
 size_t viqu_print_list(const list_t *);
-list_t *node_starts_with(list_t *, char *, char);
+list_t *viqu_node_starts_with(list_t *, char *, char);
 ssize_t viqu_get_node_index(list_t *, list_t *);
 
 /* toem_vars.c */

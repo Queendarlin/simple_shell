@@ -79,9 +79,9 @@ size_t viqu_print_list(const list_t *viqu_h)
 	while (viqu_h)
 	{
 		viqu_puts(viqu_convert_number(viqu_h->viqu_num, 10, 0));
-		viqu _putchar(':');
+		viqu_putchar(':');
 		viqu_putchar(' ');
-		viqu _puts(viqu_h->viqu_str ? viqu_h->viqu_str : "(nil)");
+		viqu_puts(viqu_h->viqu_str ? viqu_h->viqu_str : "(nil)");
 		viqu_puts("\n");
 		viqu_h = viqu_h->viqu_next;
 		viqu_i++;

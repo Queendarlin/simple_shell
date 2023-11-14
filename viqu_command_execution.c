@@ -61,7 +61,7 @@ int viqu_find_builtin(info_t *viqu_info)
 {
 	int viqu_i, viqu_builtin_ret = -1;
 
-	viqu_builtin_table viqu_builtintbl[] = {
+	builtin_table viqu_builtintbl[] = {
 		{"exit", viqu_myexit},
 		{"env", viqu_myenv},
 		{"help", viqu_myhelp},

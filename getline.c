@@ -17,11 +17,11 @@ ssize_t viqu_input_buf(info_t *viqu_info, char **viqu_adbfr, size_t *viqu_len)
 	{
 		free(*viqu_adbfr);
 		*viqu_adbfr = NULL;
-		signal(SIGINT, sigintHandler);
+		signal(SIGINT, viqu_sigintHandler);
 #if USE_GETLINE
 		viqu_r = getline(viqu_adbfr, &viqu_lptr, stdin);
 #else
-		r = viqu_getline(viqu_info, viqu_adbfr, &viqu_lptr);
+		viqu_r = viqu_getline(viqu_info, viqu_adbfr, &viqu_lptr);
 #endif
 		if (viqu_r > 0)
 		{
@@ -32,7 +32,8 @@ ssize_t viqu_input_buf(info_t *viqu_info, char **viqu_adbfr, size_t *viqu_len)
 			}
 			viqu_info->viqu_linecount_flag = 1;
 			viqu_remove_comments(*viqu_adbfr);
-			viqu_build_history_list(viqu_info, *viqu_adbfr, viqu_info->viqu_histcount++);
+			viqu_build_history_list(viqu_info, *viqu_adbfr,
+					viqu_info->viqu_histcount++);
 			{
 				*viqu_len = viqu_r;
 				viqu_info->viqu_cmd_buf = viqu_adbfr;
@@ -42,8 +43,6 @@ ssize_t viqu_input_buf(info_t *viqu_info, char **viqu_adbfr, size_t *viqu_len)
 	return (viqu_r);
 }
 
-
-#include "shell.h"
 
 /**
  * viqu_get_input - gets a line minus the newline
@@ -66,7 +65,7 @@ ssize_t viqu_get_input(info_t *viqu_info)
 	if (viqu_len)
 	{
 		viqu_j = viqu_i;
-		p = viqu_buf + viqu_i;
+		viqu_p = viqu_buf + viqu_i;
 
 		viqu_check_chain(viqu_info, viqu_buf, &viqu_j, viqu_i, viqu_len);
 		while (viqu_j < viqu_len)
@@ -91,7 +90,6 @@ ssize_t viqu_get_input(info_t *viqu_info)
 	return (viqu_r);
 }
 
-#include "shell.h"
 
 /**
  * viqu_read_buf - reads a buffer
@@ -101,7 +99,7 @@ ssize_t viqu_get_input(info_t *viqu_info)
  *
  * Return: r
  */
-ssize_t read_buf(info_t *viqu_info, char *viqu_buf, size_t *viqu_i)
+ssize_t viqu_read_buf(info_t *viqu_info, char *viqu_buf, size_t *viqu_i)
 {
 	ssize_t viqu_r = 0;
 
@@ -112,8 +110,6 @@ ssize_t read_buf(info_t *viqu_info, char *viqu_buf, size_t *viqu_i)
 		*viqu_i = viqu_r;
 	return (viqu_r);
 }
-
-#include "shell.h"
 
 /**
  * viqu_getline - gets the next line of input from STDIN
@@ -142,12 +138,13 @@ int viqu_getline(info_t *viqu_info, char **viqu_ptr, size_t *viqu_length)
 		return (-1);
 	viqu_c = viqu_strchr(viqu_buf + viqu_i, '\n');
 	viqu_k = viqu_c ? 1 + (unsigned int)(viqu_c - viqu_buf) : viqu_len;
-	viqu_new_p = viqu_realloc(viqu_p, viqu_s, viqu_s ? viqu_s + viqu_k :viqu_ k + 1);
+	viqu_new_p = viqu_realloc(viqu_p, viqu_s,
+			viqu_s ? viqu_s + viqu_k : viqu_k + 1);
 	if (!viqu_new_p)
 		return (viqu_p ? free(viqu_p), -1 : -1);
 
 	if (viqu_s)
-		viqu_strncat(viqu_new_p, viqu_buf + viqu_i, viqu_k - i);
+		viqu_strncat(viqu_new_p, viqu_buf + viqu_i, viqu_k - viqu_i);
 	else
 		viqu_strncpy(viqu_new_p, viqu_buf + viqu_i, viqu_k - viqu_i + 1);
 
@@ -160,8 +157,6 @@ int viqu_getline(info_t *viqu_info, char **viqu_ptr, size_t *viqu_length)
 	*viqu_ptr = viqu_p;
 	return (viqu_s);
 }
-
-#include "shell.h"
 
 /**
  * viqu_sigintHandler - blocks ctrl-C

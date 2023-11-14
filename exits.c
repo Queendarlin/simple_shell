@@ -10,10 +10,10 @@
 char *viqu_strncpy(char *viqu_dest, char *viqu_src, int viqu_n)
 {
 	int viqu_idx, viqu_b;
-	char *viiq_s = viqu_dest;
+	char *viqu_s = viqu_dest;
 
 	viqu_idx = 0;
-	while (viqu_src[viqu_idx] != '\0' && viqu_idx < n - 1)
+	while (viqu_src[viqu_idx] != '\0' && viqu_idx < viqu_n - 1)
 	{
 		viqu_dest[viqu_idx] = viqu_src[viqu_idx];
 		viqu_idx++;
@@ -30,8 +30,6 @@ char *viqu_strncpy(char *viqu_dest, char *viqu_src, int viqu_n)
 	return (viqu_s);
 }
 
-
-#include "shell.h"
 
 /**
  **viqu_strncat - concatenates two strings
@@ -59,9 +57,6 @@ char *viqu_strncat(char *viqu_dest, char *viqu_src, int viqu_n)
 		viqu_dest[viqu_idx] = '\0';
 	return (viqu_s);
 }
-
-
-#include "shell.h"
 
 
 /**

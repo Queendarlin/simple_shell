@@ -51,15 +51,15 @@ void *viqu_realloc(void *viqu_ptr, unsigned int viqu_old_size,
 	char *viqu_p;
 
 	if (!viqu_ptr)
-		return (viqu_malloc(viqu_new_size));
+		return (malloc(viqu_new_size));
 
 	if (!viqu_new_size)
-		return (viqu_free(viqu_ptr), NULL);
+		return (free(viqu_ptr), NULL);
 
 	if (viqu_new_size == viqu_old_size)
 		return (viqu_ptr);
 
-	viqu_p = viqu_malloc(viqu_new_size);
+	viqu_p = malloc(viqu_new_size);
 
 	if (!viqu_p)
 		return (NULL);
@@ -69,7 +69,7 @@ void *viqu_realloc(void *viqu_ptr, unsigned int viqu_old_size,
 	while (viqu_old_size--)
 		viqu_p[viqu_old_size] = ((char *)viqu_ptr)[viqu_old_size];
 
-	viqu_free(viqu_ptr);
+	free(viqu_ptr);
 
 	return (viqu_p);
 }

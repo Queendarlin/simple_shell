@@ -6,7 +6,7 @@
  * Return: 0 if no numbers in string, converted number otherwise
  */
 
-Int viqu_atoi(char *viqu_s)
+int viqu_atoi(char *viqu_s)
 {
 	int viqu_i, viqu_sign = 1, flag = 0, viqu_output;
 	unsigned int viqu_result = 0;
@@ -78,5 +78,5 @@ int viqu_is_delim(char viqu_c, char *viqu_delim)
  */
 int viqu_interactive(info_t *viqu_info)
 {
-	return (viqu_isatty(STDIN_FILENO) && viqu_info->viqu_readfd <= 2);
+	return (isatty(STDIN_FILENO) && viqu_info->viqu_readfd <= 2);
 }

@@ -39,7 +39,7 @@ int viqu_strcmp(char *viqu_s1, char *viqu_s2)
 	}
 
 	if (*viqu_s1 == *viqu_s2)
-		return 0;
+		return (0);
 	else
 		return (*viqu_s1 < *viqu_s2 ? -1 : 1);
 }

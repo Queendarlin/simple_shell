@@ -34,7 +34,6 @@ list_t *viqu_add_node(list_t **viqu_head, const char *viqu_str, int viqu_num)
 }
 
 
-#include "shell.h"
 
 /**
  * viqu_add_node_end - adds a node to the end of the list
@@ -44,7 +43,8 @@ list_t *viqu_add_node(list_t **viqu_head, const char *viqu_str, int viqu_num)
  *
  * Return: size of list
  */
-list_t *viqu_add_node_end(list_t **viqu_head, const char *viqu_str, int viqu_num)
+list_t *viqu_add_node_end(list_t **viqu_head,
+		const char *viqu_str, int viqu_num)
 {
 	list_t *viqu_new_node, *viqu_node;
 
@@ -78,7 +78,6 @@ list_t *viqu_add_node_end(list_t **viqu_head, const char *viqu_str, int viqu_num
 }
 
 
-#include "shell.h"
 
 /**
  * viqu_print_list_str - prints only the str element of a list_t linked list
@@ -102,7 +101,6 @@ size_t viqu_print_list_str(const list_t *viqu_h)
 }
 
 
-#include "shell.h"
 
 
 /**
@@ -128,7 +126,7 @@ int viqu_delete_node_at_index(list_t **viqu_head, unsigned int viqu_index)
 		free(viqu_node);
 		return (1);
 	}
-	node = *viqu_head;
+	viqu_node = *viqu_head;
 	while (viqu_node)
 	{
 		if (viqu_i == viqu_index)
@@ -144,9 +142,6 @@ int viqu_delete_node_at_index(list_t **viqu_head, unsigned int viqu_index)
 	}
 	return (0);
 }
-
-
-#include "shell.h"
 
 /**
  * viqu_free_list - frees all nodes of a list

@@ -12,14 +12,12 @@ void viqu_eputs(char *viqu_str)
 
 	if (!viqu_str)
 		return;
-	while (str[viqu_i] != '\0')
+	while (viqu_str[viqu_i] != '\0')
 	{
 		viqu_eputchar(viqu_str[viqu_i]);
 		viqu_i++;
 	}
 }
-
-#include "shell.h"
 
 /**
  * viqu_eputchar - writes the character c to stderr
@@ -44,8 +42,6 @@ int viqu_eputchar(char viqu_c)
 	return (1);
 }
 
-#include "shell.h"
-
 /**
  * viqu_putfd - writes the character c to given fd
  * @viqu_c: The character to print
@@ -62,7 +58,7 @@ int viqu_putfd(char viqu_c, int viqu_fd)
 
 	if (viqu_c == BUF_FLUSH || viqu_i >= WRITE_BUF_SIZE)
 	{
-		write(viqu_fd,viqu_buf, viqu_i);
+		write(viqu_fd, viqu_buf, viqu_i);
 		viqu_i = 0;
 	}
 	if (viqu_c != BUF_FLUSH)
@@ -70,8 +66,6 @@ int viqu_putfd(char viqu_c, int viqu_fd)
 	return (1);
 }
 
-
-#include "shell.h"
 
 /**
  * viqu_putsfd - prints an input string
