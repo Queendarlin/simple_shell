@@ -10,8 +10,9 @@ int viqu_myexit(info_t *viqu_info)
 {
 	int viqu_exitcheck;
 
-	if (viqu_info->viqu_argv[1])          	{
-		viqu_exitcheck =viqu_erratoi(viqu_info->viqu_argv[1]);
+	if (viqu_info->viqu_argv[1])
+{
+		viqu_exitcheck = viqu_erratoi(viqu_info->viqu_argv[1]);
 		if (viqu_exitcheck == -1)
 		{
 			viqu_info->viqu_status = 2;
@@ -20,15 +21,12 @@ int viqu_myexit(info_t *viqu_info)
 			viqu_eputchar('\n');
 			return (1);
 		}
-		viqu_info->viqu_err_num =viqu_erratoi(viqu_info->viqu_argv[1]);
+		viqu_info->viqu_err_num = viqu_erratoi(viqu_info->viqu_argv[1]);
 		return (-2);
 	}
 	viqu_info->viqu_err_num = -1;
 	return (-2);
 }
-
-#include "shell.h"
-
 /**
  * viqu_mycd - changes the current directory of the process
  * @viqu_info: Structure containing potential arguments. Used to maintain
