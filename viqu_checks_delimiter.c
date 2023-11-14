@@ -7,6 +7,7 @@
  *
  * Return: (1) if the character is a delimiter, otherwise (0).
  */
+
 int viqu_checks_delimiter(char viqu_c, char *viqu_delim)
 {
 	while (*viqu_delim)
