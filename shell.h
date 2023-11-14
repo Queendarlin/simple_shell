@@ -143,9 +143,9 @@ int viqu_puts_file_d(char *viqu_string, int viqu_file_des);
 /* toem_string.c */
 int viqu_custom_strlen(char *viqu_string);
 int viqu_custom_strcmp(char *viqu_string1, char *viqu_string2);
-char *viqu_string_start(const char *viqu_haystack,
-		const char *viqu_needle);
 char *viqu_custom_strcat(char *viqu_dest, char *viqu_src);
+char *viqu_string_start(const char *viqu_hey,
+		const char *viqu_n);
 
 /* toem_string1.c */
 char *viqu_custom_strcpy(char *viqu_dest, char *viqu_src);
