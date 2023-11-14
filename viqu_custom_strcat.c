@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * viqu_string_concat - Function to concatenate two strings up to a byte
+ * viqu_custom_strcat - Function to concatenate two strings up to a byte
  * @viqu_dest: The first string to be concatenated.
  * @viqu_src: The second string to be concatenated.
  *

@@ -7,6 +7,7 @@
  *
  * Return: 0 when successful or (1) on error.
  */
+
 int viqu_unset_alias(info_t *viqu_info, char *viqu_str)
 {
 	char *viqu_p, viqu_c;

@@ -26,8 +26,8 @@ void viqu_search_command(info_t *viqu_info)
 	if (!viqu_k)
 		return;
 
-	viqu_path = viqu_find_cmd_path(viqu_info, viqu_obtain_environ(viqu_info, "PATH="),
-			viqu_info->viqu_argv[0]);
+	viqu_path = viqu_find_cmd_path(viqu_info, viqu_obtain_environ(viqu_info,
+				"PATH="), viqu_info->viqu_argv[0]);
 	if (viqu_path)
 	{
 		viqu_info->viqu_path = viqu_path;

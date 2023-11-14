@@ -257,6 +257,6 @@ int viqu_rep_str(char **viqu_old, char *viqu_new);
 /** alias */
 int viqu_set_alias(info_t *viqu_info, char *viqu_str);
 int viqu_print_alias(list_t *viqu_node);
-
+int viqu_unset_alias(info_t *viqu_info, char *viqu_str);
 
 #endif
