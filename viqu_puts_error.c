@@ -4,6 +4,7 @@
  * viqu_puts_error - Function to print the input string to the stdout
  * @viqu_string: The string to be printed.
  */
+
 void viqu_puts_error(char *viqu_string)
 {
 	int viqu_index = 0;
