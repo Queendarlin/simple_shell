@@ -30,7 +30,8 @@ Once the shell is running, you can enter commands. Here are some key points to r
 A big thank you to the dynamic duo behind this simple shell project:
 * Queendarlin Nnamani
 * Victor Ochuba
-Thank you both for your hard work and dedication to this project!
+
+* Thank you for your hard work and dedication to this project!
 Your dedication and expertise have been crucial in making this project successful.
 
 ## Contributing
