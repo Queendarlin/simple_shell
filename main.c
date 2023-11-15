@@ -29,7 +29,7 @@ int main(int viqu_ac, char **viqu_av)
 					exit(126);
 				case ENOENT:
 					viqu_puts_error(viqu_av[0]);
-					viqu_puts_error(": 0: Can't open ");
+					viqu_puts_error(": 0: inaccessible ");
 					viqu_puts_error(viqu_av[1]);
 					exit(127);
 				default:
