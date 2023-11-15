@@ -13,7 +13,7 @@ int viqu_remove_environ_var(info_t *viqu_info)
 
 	if (viqu_info->viqu_argc == 1)
 	{
-		viqu_puts_error("Limited number parameters.\n");
+		viqu_puts_error("Limited parameters.\n");
 		return (1);
 	}
 

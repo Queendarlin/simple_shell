@@ -43,7 +43,7 @@ void viqu_search_command(info_t *viqu_info)
 		else if (*(viqu_info->viqu_arg) != '\n')
 		{
 			viqu_info->viqu_status = 127;
-			viqu_display_error(viqu_info, "cmd not known\n");
+			viqu_display_error(viqu_info, "not found\n");
 		}
 	}
 }
