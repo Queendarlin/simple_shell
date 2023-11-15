@@ -7,7 +7,8 @@
  * @viqu_buf: Char buffer storing the command line.
  * @viqu_p: Address of the current position in the buffer.
  *
- * Return: 1 if the current character is a chain delimiter, 0 otherwise.
+ * Return: 1 when successful showing the current character
+ * is a chain delimiter, else 0
  */
 
 int viqu_test_chain_delimiter(info_t *viqu_info, char *viqu_buf,

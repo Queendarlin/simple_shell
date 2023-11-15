@@ -5,7 +5,7 @@
  * into words using a single delimiter character
  * @viqu_str: The input string to split
  * @viqu_delim: The delimiter character to use in splitting the string
- *   Return: Returns a pointer to the word from the input string or NULL
+ * Return: Returns a pointer to the word from the input string or NULL
  */
 
 char **viqu_string_token(char *viqu_str, char viqu_delim)

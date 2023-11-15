@@ -5,7 +5,7 @@
  * @viqu_info: Structure containing parameters.
  * @viqu_str: The string alias.
  *
- * Return: Returns 0 when successful, or 1 on error.
+ * Return: Returns 0 when successful, or 1 on error
  */
 
 int viqu_set_alias(info_t *viqu_info, char *viqu_str)

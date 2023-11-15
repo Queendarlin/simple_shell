@@ -2,7 +2,7 @@
 
 /**
  * viqu_reset_info - Function to set fields to their initial values
- * @viqu_info: Pointer to the list to be initialized.
+ * @viqu_info: Pointer to the list to be initialized
  *
  */
 

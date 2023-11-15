@@ -5,7 +5,7 @@
  * @viqu_info: Structure containing parameters.
  * @viqu_str: The string representing the alias.
  *
- * Return: 0 when successful or (1) on error.
+ * Return: 0 when successful or (1) if error occur.
  */
 
 int viqu_unset_alias(info_t *viqu_info, char *viqu_str)

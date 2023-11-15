@@ -4,7 +4,7 @@
  * viqu_renum_hist_list - Function to renumber the linked list’s history
  * @viqu_info: Parameter for maintaining argument structure.
  *
- * Return: The modified number of the history.
+ * Return: The modified number of the history
  */
 int viqu_renum_hist_list(info_t *viqu_info)
 {

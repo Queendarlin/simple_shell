@@ -3,7 +3,7 @@
 /**
  * viqu_shell_loop - The Function for the specified shell loop.
  * @viqu_info: The structure containing parameter and return information.
- * @viqu_av:The main() function's argument vector.
+ * @viqu_av:The main() function's command line arguments
  *
  * Return: 0 when successful, 1 when error is encountered, or error code.
  */

@@ -4,7 +4,7 @@
  * viqu_rep_alias - Replaces an alias in the tokenized string.
  * @viqu_info: Pointer to the structure containing shell information.
  *
- * Return: 1 if replaced, 0 otherwise.
+ * Return: 1 if replaced, else 0
  */
 
 int viqu_rep_alias(info_t *viqu_info)

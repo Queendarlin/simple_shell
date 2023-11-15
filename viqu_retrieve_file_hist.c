@@ -2,7 +2,7 @@
 
 /**
  * viqu_retrieve_file_hist - Function to retrieve the history of a file path.
- * @viqu_info: Parameter for maintaining argument structure.
+ * @viqu_info: Parameter for maintaining argument structure
  *
  * Return: The specified string containing the history file path
  */

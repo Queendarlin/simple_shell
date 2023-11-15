@@ -5,7 +5,7 @@
  * tokenized string.
  * @viqu_info: Pointer to the structure containing shell information.
  *
- * Return: 1 if replacements were successfully made; otherwise, returns 0.
+ * Return: 1 if replacements were successfully made; otherwise, returns 0
  */
 int viqu_rep_variables(info_t *viqu_info)
 {

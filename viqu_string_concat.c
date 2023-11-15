@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * viqu_string_concat - Function that also concatenates two strings
- * @viqu_dest: first string
- * @viqu_src: second string
+ * viqu_string_concat - Function to join two strings together
+ * @viqu_dest: first string to the joined
+ * @viqu_src: second string to join to the first
  * @viqu_n: volume of bytes to be maximally used
  *
- * Return: the concatenated string
+ * Return: viqu_dest
  */
 
 char *viqu_string_concat(char *viqu_dest, char *viqu_src, int viqu_n)

@@ -63,7 +63,7 @@ typedef struct viqu_list_str
  * @viqu_linecount_flag: For counting input line
  * @viqu_file_name: The name of file for the program
  * @viqu_env: The environment of linked list
- * @environ: Custom environment
+ * @viqu_environ: Custom environment
  * @viqu_history: Linked list history for the node
  * @viqu_alias: Node for creating alias
  * @viqu_env_changed: For the condition of changing environment

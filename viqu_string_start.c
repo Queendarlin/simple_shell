@@ -5,7 +5,7 @@
  * @viqu_hey: The string to search.
  * @viqu_n: The substring to find.
  *
- * Return: The address of the next character in viqu_haystack if viqu_n
+ * Return: The address of the next character in viqu_hey if viqu_n
  * starts with viqu_hey, or NULL otherwise.
  */
 
