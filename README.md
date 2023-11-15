@@ -29,8 +29,8 @@ Once the shell is running, you can enter commands. Here are some key points to r
 ## Collaborators
 A big thank you to the dynamic duo behind this simple shell project:
 
-- **[Queendarlin Nnamani](https://github.com/Queendarlin)** - Project Lead
-- **[Victor Ochuba](https://github.com/VALUE-95)** - Contributor
+- **[Queendarlin Nnamani](https://github.com/Queendarlin)**
+- **[Victor Ochuba](https://github.com/VALUE-95)**
 
 Thank you for your hard work and dedication to this project!
 ## Contributing
