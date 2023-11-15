@@ -2,46 +2,44 @@
 
 /**
  * main - Function to initialize and execute the shell program
- * @viqu_ac: The parameter for the count of command-line arguments
- * @viqu_av: Pointer to array of strings representing
- * the command-line arguments
- *
+ * @ac: The parameter for the count of command-line arguments
+ * @av: Pointer to array of strings representing the command-line arguments
  * Return: 0 upon successful execution, 1 if an error occurs
  */
-int main(int viqu_ac, char **viqu_av)
+
+int main(int ac, char **av)
 {
-	info_t viqu_info[] = { VIQU_INFO_INIT };
+	info_t viqu_info[] = { VIQU_DEFAULT_INIT };
+
 	int viqu_fd = 2;
 
 	asm ("mov %1, %0\n\t"
 			"add $3, %0"
 			: "=r" (viqu_fd)
 			: "r" (viqu_fd));
-
-	if (viqu_ac == 2)
+	if (ac == 2)
 	{
-		viqu_fd = open(viqu_av[1], O_RDONLY);
+		viqu_fd = open(av[1], O_RDONLY);
 		if (viqu_fd == -1)
 		{
 			if (errno == EACCES)
 				exit(126);
 			if (errno == ENOENT)
 			{
-				viqu_eputs(viqu_av[0]);
-				viqu_eputs(": 0: Can't open ");
-				viqu_eputs(viqu_av[1]);
-				viqu_eputchar('\n');
-				viqu_eputchar(BUF_FLUSH);
+				viqu_puts_error(av[0]);
+				viqu_puts_error(": 0: Can't open ");
+				viqu_puts_error(av[1]);
+				viqu_putchar_error('\n');
+				viqu_putchar_error(VIQU_FLUSH_BUFFER);
 				exit(127);
 			}
 			return (EXIT_FAILURE);
 		}
-		viqu_info->viqu_readfd = viqu_fd;
+		viqu_info->viqu_read_fd = viqu_fd;
 	}
 
-	viqu_populate_env_list(viqu_info);
-	viqu_read_history(viqu_info);
-	viqu_hsh(viqu_info, viqu_av);
-
+	viqu_occupy_environ_list(viqu_info);
+	viqu_read_file_hist(viqu_info);
+	viqu_shell_loop(viqu_info, av);
 	return (EXIT_SUCCESS);
 }
