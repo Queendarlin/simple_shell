@@ -12,7 +12,7 @@ int main(int viqu_ac, char **viqu_av)
 {
 	info_t viqu_info[] = { VIQU_DEFAULT_INIT };
 
-	int viqu_fd 2;
+	int viqu_fd = 2;
 
 	asm ("mov %1, %0\n\t"
                         "add $3, %0"
