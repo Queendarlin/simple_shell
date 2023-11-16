@@ -18,7 +18,7 @@ int viqu_exit_control(info_t *viqu_info)
 		if (viqu_exit_check == -1)
 		{
 			viqu_info->viqu_status = 2;
-			viqu_display_error(viqu_info, "invalid number: ");
+			viqu_display_error(viqu_info, "illegal number: ");
 			viqu_puts_error(viqu_info->viqu_argv[1]);
 			viqu_putchar_error('\n');
 			return (1);
