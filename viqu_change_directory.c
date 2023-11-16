@@ -13,7 +13,8 @@ int viqu_change_directory(info_t *g)
 
 	viqu_s = getcwd(viqu_buffer, 1024);
 	if (!viqu_s)
-		viqu_puts("TODO: >>Handle getcwd failure for an error message here<<\n");
+		viqu_puts("Error: Unable to get current working directory. ");
+	perror("getcwd");
 	if (!g->viqu_argv[1])
 	{
 		viqu_d = viqu_obtain_environ(g, "HOME=");
