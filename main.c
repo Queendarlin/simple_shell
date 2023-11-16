@@ -15,9 +15,9 @@ int main(int viqu_ac, char **viqu_av)
 	int viqu_fd = 2;
 
 	asm ("mov %1, %0\n\t"
-                        "add $3, %0"
-                        : "=r" (viqu_fd)
-                        : "r" (viqu_fd));
+			"add $3, %0"
+			: "=r" (viqu_fd)
+			: "r" (viqu_fd));
 
 	if (viqu_ac == 2)
 	{
