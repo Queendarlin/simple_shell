@@ -12,12 +12,10 @@ int main(int viqu_ac, char **viqu_av)
 {
 	info_t viqu_info[] = { VIQU_DEFAULT_INIT };
 
-	int viqu_fd = 2;
+	int viqu_fd 2;
 
-	asm ("mov %1, %0\n\t"
-			"add $3, %0"
-			: "=r" (viqu_fd)
-			: "r" (viqu_fd));
+	viqu_fd += 3;
+
 	if (viqu_ac == 2)
 	{
 		viqu_fd = open(viqu_av[1], O_RDONLY);
