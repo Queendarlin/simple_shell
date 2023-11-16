@@ -13,7 +13,7 @@ int viqu_change_directory(info_t *g)
 
 	viqu_s = getcwd(viqu_buffer, 1024);
 	if (!viqu_s)
-		viqu_puts("TODO: >>Handle getcwd failure error message here<<\n");
+		viqu_puts("TODO: >> getcwd failure error message here<<\n");
 	if (!g->viqu_argv[1])
 	{
 		viqu_d = viqu_obtain_environ(g, "HOME=");
